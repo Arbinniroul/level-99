@@ -1,6 +1,7 @@
 import express from "express";
-const app=express()
+import { getAllRestaurants } from "../controller/RestaurantController.js";
+const router = express.Router();
 
-app.get('/restaurants',getAllRestaruants)
+router.get("/", getAllRestaurants);
 
-export default app;
+export default router;

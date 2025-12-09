@@ -1,6 +1,8 @@
+import { Timestamp } from "mongodb";
 import mongoose from "mongoose";
 
-const MenuItemSchema = new mongoose.Schema({
+const MenuItemSchema = new mongoose.Schema(
+  {
   name: {
     type: String,
     required: true,
@@ -20,7 +22,11 @@ const MenuItemSchema = new mongoose.Schema({
     ref: "Restaurant",
     required: true,
   },
-});
+},
+{
+  timestamps:true
+}
+);
 
 const MenuItem = mongoose.model("MenuItem", MenuItemSchema);
 export default MenuItem;
